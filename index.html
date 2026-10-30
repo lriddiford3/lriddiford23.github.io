@@ -1,19 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lauren Riddiford</title>
-  <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #edf6f9;
+  color: black;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #d9edf3;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: #edf6f9;}
+#Publications {background-color: #edf6f9;}
+#Projects {background-color: #edf6f9;}
+</style>
 </head>
 <body>
-  <h1>Lauren Riddiford</h1>
 
-  <p>I am an experimental materials physicist trying to make everyday materials more interesting by engineering their properties. Most recently, I was a postdoctoral fellow at ETH Zurich and the Paul Scherrer Institute in the <a href="https://mesosys.mat.ethz.ch">Mesoscopic Systems Laboratory</a> under Prof. Larua Heyderman.
-  Before that, I completed my PhD in Applied Physics at Stanford University, advised by <a href="https://suzukilab.stanford.edu">Prof. Yuri Suzuki</a>.</p>
+<button class="tablink" onclick="openPage('Home', this, 'lightblue')">Home</button>
+<button class="tablink" onclick="openPage('Publications', this, 'lightblue')" id="defaultOpen">Publications</button>
+<button class="tablink" onclick="openPage('Projects', this, 'lightblue')">Projects</button>
+
+<div id="Home" class="tabcontent">
+  
+</div>
+
+<div id="Publications" class="tabcontent">
+  <h3>Publications</h3>
+  <p>Some news this fine day!</p> 
+</div>
+
+<div id="Projects" class="tabcontent">
+  <h3>Projects</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
 
 
-  <h3>Contact</h3>
-  <p> lauren.riddiford[at]psi.ch </p>
-  <p> <a href="https://scholar.google.com/citations?user=S6Y60WMAAAAJ&hl=en">Google Scholar</a> </p>
-  <p> <a href="www.linkedin.com/in/lauren-riddiford-199868101">LinkedIn</a> </p>
+<script>
+function openPage(pageName,elmnt, color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
 </body>
-</html>
+</html> 
